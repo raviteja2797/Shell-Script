@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo yum update -y
+cd /opt
+sudo wget https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.64/bin/apache-tomcat-8.5.64.tar.gz
+sudo tar -zxvf apache-tomcat-8.5.64.tar.gz
+sudo mv apache-tomcat-8.5.64 tomcat8
+sudo yum install maven -y
+sudo yum install git -y
+sudo yum install java-1.8.0-openjdk -y
+sudo yum install docker -y
+sudo chown -R ec2-user:ec2-user /opt
+cd /opt/tomcat8/webapps/
+sudo wget https://updates.jenkins-ci.org/download/war/2.284/jenkins.war
+sudo yum install fontconfig -y
+sudo sh /opt/tomcat8/bin/startup.sh
